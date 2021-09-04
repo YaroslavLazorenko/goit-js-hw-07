@@ -13,17 +13,17 @@ const images = [
   },
 ];
 
-const makeImageListItemMarkup = image => {
-  return `<li><img src="${image.url}" alt="${image.alt}"></li>`;
+const makeListItemAndImageMarkup = ({url, alt}) => {
+  return `<li><img src="${url}" alt="${alt}"></li>`;
 };
 
-const galleryMarkup = images.map(image => makeImageListItemMarkup(image))
+const galleryMarkup = images.map(image => makeListItemAndImageMarkup(image))
   .join("");
 
 const galleryList = document.getElementById("gallery");
 galleryList.insertAdjacentHTML("beforeend", galleryMarkup);
 
-//<=========== Add classes to style the markup ==============>
+//<=========== Adding classes for styling the markup ==============>
 
 galleryList.classList.add("list");
 

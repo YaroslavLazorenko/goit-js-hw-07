@@ -13,22 +13,21 @@ const images = [
   },
 ];
 
-const makeListItemAndImageMarkup = ({url, alt}) => {
+const makeListItemAndImageMarkup = ({ url, alt }) => {
   return `<li><img src="${url}" alt="${alt}"></li>`;
 };
 
-const galleryMarkup = images.map(image => makeListItemAndImageMarkup(image))
-  .join("");
+const galleryMarkup = images.map(image => makeListItemAndImageMarkup(image)).join('');
 
-const galleryList = document.getElementById("gallery");
-galleryList.insertAdjacentHTML("beforeend", galleryMarkup);
+const galleryList = document.getElementById('gallery');
+galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
 
 //<=========== Adding classes for styling the markup ==============>
 
-galleryList.classList.add("list");
+galleryList.classList.add('list');
 
-const galleryListItems = document.querySelectorAll(".list > li");
-galleryListItems.forEach(item => item.classList.add("list-item"));
+const galleryListItems = document.querySelectorAll('.list > li');
+galleryListItems.forEach(item => item.classList.add('list-item'));
 
-const galleryImages = document.querySelectorAll(".list img");
-galleryImages.forEach(item => item.classList.add("list-item-image"));
+const galleryImages = document.querySelectorAll('.list img');
+galleryImages.forEach(item => item.classList.add('list-item-image'));

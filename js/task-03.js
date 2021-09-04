@@ -12,3 +12,23 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const makeImageListItemMarkup = image => {
+  return `<li><img src="${image.url}" alt="${image.alt}"></li>`;
+};
+
+const galleryMarkup = images.map(image => makeImageListItemMarkup(image))
+  .join("");
+
+const galleryList = document.getElementById("gallery");
+galleryList.insertAdjacentHTML("beforeend", galleryMarkup);
+
+//<=========== Add classes to style the markup ==============>
+
+galleryList.classList.add("list");
+
+const galleryListItems = document.querySelectorAll(".list > li");
+galleryListItems.forEach(item => item.classList.add("list-item"));
+
+const galleryImages = document.querySelectorAll(".list img");
+galleryImages.forEach(item => item.classList.add("list-item-image"));

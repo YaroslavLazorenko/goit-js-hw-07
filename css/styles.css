@@ -1,0 +1,22 @@
+.list {
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+}
+
+.list-item {
+  width: 330px;
+  height: 220px;
+  margin: 30px;
+
+  border: 3px outset rgb(209, 188, 164);
+  border-radius: 3px;
+  box-shadow: 0 6px 12px 0 rgba(31, 20, 20, 0.27), 0 8px 25px 0 rgba(0, 0, 0, 0.21);
+  overflow: hidden;
+}
+
+.list-item-image {
+  margin: auto 0;
+  height: 100%;
+}
